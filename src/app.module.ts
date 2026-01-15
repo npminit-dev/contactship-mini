@@ -6,6 +6,7 @@ import { LeadsModule } from './leads/leads.module';
 import { redisStore } from 'cache-manager-redis-store';
 import { CacheModule } from '@nestjs/cache-manager';
 import { BullModule } from '@nestjs/bull';
+import { SyncModule } from './sync/sync.module';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { BullModule } from '@nestjs/bull';
       store: redisStore,
       host: process.env.REDIS_HOST,
       port: Number(process.env.REDIS_PORT),
-      ttl: 60000, // segundos
+      ttl: 60000, // 1 minuto
       isGlobal: true,
     }),
 
@@ -41,7 +42,9 @@ import { BullModule } from '@nestjs/bull';
 
     ScheduleModule.forRoot(),
 
+    SyncModule,
     LeadsModule,
+
   ],
 })
 export class AppModule { }

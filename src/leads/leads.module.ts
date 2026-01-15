@@ -14,6 +14,7 @@ import { SummarizeLeadProcessor } from './jobs/summarize-lead.processor';
   }),
   ],
   controllers: [LeadsController],
-  providers: [LeadsService, AiService, SummarizeLeadProcessor]
+  providers: [LeadsService, AiService, SummarizeLeadProcessor],
+  exports: [LeadsService],
 })
 export class LeadsModule { }

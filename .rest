@@ -20,17 +20,17 @@ x-api-key: {{apiKey}}
 
 ###
 
-GET {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952
+GET {{baseUrl}}/leads/548f1b69-c650-49cf-8ce9-fa6e1699163a
 x-api-key: {{apiKey}}
 
 ###
 
-POST {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952/summarize
+POST {{baseUrl}}/leads/548f1b69-c650-49cf-8ce9-fa6e1699163a/summarize
 Content-Type: application/json
 x-api-key: {{apiKey}}
 
 ### Force re-generation of summary
-POST {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952/summarize?force=true
+POST {{baseUrl}}/leads/548f1b69-c650-49cf-8ce9-fa6e1699163a/summarize?force=true
 Content-Type: application/json
 x-api-key: {{apiKey}}
 
