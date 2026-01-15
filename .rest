@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:3000
+@apiKey = {{$dotenv API_KEY}}
+
+
+POST {{baseUrl}}/create-lead
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@test.com",
+  "phone": "123456"
+}
+
+###
+
+GET {{baseUrl}}/leads
+x-api-key: {{apiKey}}
+
+###
+
+GET {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952
+x-api-key: {{apiKey}}
+
+###
+
+POST {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952/summarize
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+### Force re-generation of summary
+POST {{baseUrl}}/leads/45fece92-0fea-4d7e-9c84-b541fa69e952/summarize?force=true
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
